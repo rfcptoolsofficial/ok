@@ -4,7 +4,23 @@ from colorama import init, Fore, Style
 
 # Initialize colorama
 init()
+def check_install_requests():
+    try:
+        import requests
+    except ModuleNotFoundError:
+        os.system('pip uninstall requests chardet urllib3 idna certifi -y; pip install chardet urllib3 idna certifi requests')
 
+
+check_install_requests()
+# ────────────────[Gitpull]─────────────────
+
+try:
+    os.system('clear')
+    print("\033[1;36mCHECKING UPDATES....")
+    os.system("git pull > /dev/null 2>&1")
+except:
+    pass
+    
 # ASCII Art Logo
 logo = r"""
              ██████╗ ███████╗ ██████╗██████╗ 
