@@ -1,18 +1,28 @@
 import os
 import subprocess
+import platform
 
 # Path to your local repository
-repo_path = 'ok'  # Change this if your repo is in a different location
+repo_path = 'ok'  # Adjust this if needed
+
+def clear_console():
+    """Clear the console based on the operating system."""
+    os.system('cls' if platform.system() == 'Windows' else 'clear')
 
 def update_repo():
     try:
-        # Ensure the repository path exists
+        # Clear the console
+        clear_console()
+
+        # Check if the repository directory exists
         if not os.path.isdir(repo_path):
-            print(f"Error: The directory '{repo_path}' does not exist.")
-            return
-        
-        # Change the current working directory to the repository path
-        os.chdir(repo_path)
+            print(f"The directory '{repo_path}' does not exist. Cloning the repository...")
+            # Clone the repository if it doesn't exist
+            subprocess.run(['git', 'clone', 'https://github.com/rfcptoolsofficial/ok.git', repo_path], check=True)
+            print(f"Repository cloned successfully into '{repo_path}'.")
+            os.chdir(repo_path)  # Change to the new repo directory
+        else:
+            os.chdir(repo_path)
 
         # Fetch the latest changes
         subprocess.run(['git', 'fetch'], check=True)
