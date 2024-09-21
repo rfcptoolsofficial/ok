@@ -6,6 +6,23 @@ from colorama import Fore, Style, init
 
 init()  # Initialize Colorama
 
+def clear_console():
+    """Clear the console depending on the operating system."""
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def display_logo():
+    logo = r"""
+    _____            _             _           _ 
+   |  __ \          | |           | |         | |
+   | |  | | ___  ___| | __ _ _ __ | |__   __ _| |
+   | |  | |/ _ \/ __| |/ _` | '_ \| '_ \ / _` | |
+   | |__| |  __/\__ \ | (_| | | | | | | | (_| | |
+   |_____/ \___||___/_|\__,_|_| |_|_| |_|\__, |_|
+                                            __/ |   
+                                           |___/    
+    """
+    print(Fore.MAGENTA + logo + Style.RESET_ALL)
+
 def generate_user_agent():
     user_agents = [
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
@@ -174,4 +191,6 @@ def menu():
             print(Fore.RED + "Invalid choice, please enter 1 or 2." + Style.RESET_ALL)
 
 if __name__ == "__main__":
+    clear_console()  # Clear the console before running the menu
+    display_logo()   # Display the logo
     menu()
