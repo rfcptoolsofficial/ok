@@ -90,9 +90,8 @@ def save_to_file(filename, content):
     print(Fore.GREEN + f"Token successfully saved to {filename}" + Style.RESET_ALL)
 
 def process_credentials():
-    credentials_folder = '/storage/RFCPTOOLS/credentials/'
-    id_file = os.path.join(credentials_folder, '/storage/RFCPTOOLS/credentials/id.txt')
-    password_file = os.path.join(credentials_folder, '/storage/RFCPTOOLS/credentials/password.txt')
+    id_file = '/storage/RFCPTOOLS/credentials/id.txt'
+    password_file = '/storage/RFCPTOOLS/credentials/password.txt'
 
     if not os.path.exists(id_file) or not os.path.exists(password_file):
         print(Fore.RED + "Credentials files not found. Ensure id.txt and password.txt exist." + Style.RESET_ALL)
