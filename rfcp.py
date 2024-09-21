@@ -60,8 +60,7 @@ def main():
         print(Fore.YELLOW + "[4.] Duplicated Id Checker" + Style.RESET_ALL)
         print(Fore.YELLOW + "[5.] Page Token Extractor" + Style.RESET_ALL)
         print(Fore.YELLOW + "[6.] Approval Tools" + Style.RESET_ALL)
-        print(Fore.YELLOW + "[7.] Auto Update" + Style.RESET_ALL)
-        print(Fore.YELLOW + "[8.] Stop" + Style.RESET_ALL)  # Option to stop
+        print(Fore.YELLOW + "[7.] Stop" + Style.RESET_ALL)  # Option to stop
         
         choice = input(Fore.MAGENTA + "Enter the number of your choice: " + Style.RESET_ALL)
         
@@ -78,8 +77,6 @@ def main():
         elif choice == '6':
             run_script('tools/approvaltools.py')
         elif choice == '7':
-            run_script('tools/autoupdate.py')    
-        elif choice == '8':
             print(Fore.GREEN + "Exiting program. Goodbye!" + Style.RESET_ALL)
             break  # Exit the loop to stop the program
         else:
