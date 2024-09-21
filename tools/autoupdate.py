@@ -16,13 +16,10 @@ def update_repo():
 
         # Check if the repository directory exists
         if not os.path.isdir(repo_path):
-            print(f"The directory '{repo_path}' does not exist. Cloning the repository...")
-            # Clone the repository if it doesn't exist
-            subprocess.run(['git', 'clone', 'https://github.com/rfcptoolsofficial/ok.git', repo_path], check=True)
-            print(f"Repository cloned successfully into '{repo_path}'.")
-            os.chdir(repo_path)  # Change to the new repo directory
-        else:
-            os.chdir(repo_path)
+            print(f"The directory '{repo_path}' does not exist. Please clone the repository manually first.")
+            return
+        
+        os.chdir(repo_path)  # Change to the repository directory
 
         # Fetch the latest changes
         subprocess.run(['git', 'fetch'], check=True)
