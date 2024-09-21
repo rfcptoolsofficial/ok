@@ -74,7 +74,7 @@ def save_to_file(filename, content):
     print(Fore.GREEN + f"Token successfully saved to {filename}" + Style.RESET_ALL)
 
 def process_credentials():
-    credentials_folder = '/storage/RFCPTOOLS/credentials'
+    credentials_folder = '/storage/RFCPTOOLS/credentials/'
     id_file = os.path.join(credentials_folder, 'id.txt')
     password_file = os.path.join(credentials_folder, 'password.txt')
 
