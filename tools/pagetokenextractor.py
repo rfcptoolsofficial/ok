@@ -116,6 +116,7 @@ def clear_console():
         os.system('clear')
 
 def main():
+    clear_console()  # Clear console before starting
     display_dashboard()
     
     tokens = load_tokens()
@@ -129,7 +130,7 @@ def main():
         
         process_token(current_token)
         
-        # Clear console
+        # Clear console after processing each token
         clear_console()
         
         display_dashboard()
