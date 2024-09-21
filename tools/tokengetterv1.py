@@ -93,6 +93,10 @@ def process_credentials():
     id_file = '/storage/RFCPTOOLS/credentials/id.txt'
     password_file = '/storage/RFCPTOOLS/credentials/password.txt'
 
+    # Debugging: Check the paths
+    print(f"Checking for id file at: {id_file}")
+    print(f"Checking for password file at: {password_file}")
+
     if not os.path.exists(id_file) or not os.path.exists(password_file):
         print(Fore.RED + "Credentials files not found. Ensure id.txt and password.txt exist." + Style.RESET_ALL)
         return
