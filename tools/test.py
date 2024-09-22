@@ -116,7 +116,6 @@ def get_approval_data(url):
 
 def approval():
     clear_console()
-    print(Fore.CYAN + logo + Style.RESET_ALL)  # Display logo in cyan
     user_id = str(os.geteuid())
     uuid = f"{user_id}DS{user_id}"
     key = f"RFCP-{uuid}"
