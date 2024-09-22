@@ -1314,42 +1314,6 @@ def process_invalid_tokens():
             get_page_tokens(access_token=token)
 
 #description guide
-def approval_details():
-    clear_console()
-    logo()
-    dashboard()
-    rp(pan(f"""{randc()}       
-  𝐃𝐞𝐯𝐢𝐜𝐞 𝐀𝐜𝐜𝐞𝐬𝐬𝐊𝐞𝐲:{FIXED_APPROVAL_KEY}
-  𝗞𝗲𝘆 𝗘𝘅𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻:{get_time_remaining()}
-""", title=f"{Y}APPROVAL DETAILS", border_style="bold yellow"))
-    input("Press Enter to return to the main menu...")
-
-#APPROVAL TOOLS
-# Define the fixed API URL
-API_TOOLS = 'http://sgp1.hmvhostings.com:25609/add-token/'
-
-def add_token(key, api_tools):
-    url = f'{api_tools}{key}'
-    
-    try:
-        response = requests.get(url)
-        
-        if response.status_code == 200:
-            print(Fore.GREEN + 'Access key added successfully!' + Style.RESET_ALL)
-        else:
-            print(Fore.RED + 'Failed to add token.' + Style.RESET_ALL)
-            print(Fore.YELLOW + 'Status Code:', response.status_code + Style.RESET_ALL)
-            print(Fore.YELLOW + 'Response:', response.text + Style.RESET_ALL)
-    
-    except requests.RequestException as e:
-        print(Fore.RED + 'An error occurred:', e + Style.RESET_ALL)
-
-def approval_tools():
-    key = input(Fore.CYAN + 'Please insert the key: ' + Style.RESET_ALL)
-    add_token(key, API_TOOLS)
-    
-    # Prompt user to press Enter to exit
-    input(Fore.CYAN + 'Press Enter to go back...' + Style.RESET_ALL)
 
 
         
@@ -1421,7 +1385,7 @@ def other_menu():
                 f"{Y}[6] {G}UID GETTER\n"
                 f"{Y}[7] {G}DELETE TOKENS\n"
         
-                f"{Y}[8] {G}APPROVAL TOOLS\n"
+               
                 f"{Y}[0] {G}BACK\n",
                 title=f"{Y}Other Tools Menu",
                 border_style="bold yellow"))
@@ -1446,8 +1410,7 @@ def other_menu():
         elif choice =='7':
         	delete_tokens(tool_token())
       
-        elif choice =='8':
-            approval_tools()
+       
         elif choice == '0':
             return
 
