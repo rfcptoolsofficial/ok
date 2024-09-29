@@ -28,8 +28,8 @@ def randc():
 # Logo
 def logo():
     rp(pan(f"""{randc()}""",
-           title=f"{Y}Leinathan Oremor",
-           subtitle=f"{R}AUTOMATED ACCOUNT CHECKER",
+           title=f"{Y}TOKEN GETTER",
+           subtitle=f"{R}FOR NORMAL ACCOUNT",
            border_style="bold purple"))
 
 # Clear screen
