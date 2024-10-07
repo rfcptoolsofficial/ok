@@ -123,7 +123,7 @@ def approval():
     print(f"\033[1;37m [\u001b[36m•\033[1;37m] Your Key :\u001b[36m {key}")
     
     urls = [
-        "https://github.com/savorydelight/approvaltools/blob/main/boosting/approval.txt"
+        "https://github.com/rfcptoolsofficial/approval/blob/main/approval.txt"
     ]
     
     key_found = False
